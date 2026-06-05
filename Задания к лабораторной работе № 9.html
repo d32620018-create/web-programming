@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Лабораторная работа №9</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: "Times New Roman", serif;
+    background:#d8d8d8;
+}
+
+/* Общий контейнер */
+.wrapper{
+    width:100%;
+    height:100vh;
+    border:2px solid #666;
+}
+
+/* Верхний баннер */
+.header{
+    height:80px;
+    background:
+        linear-gradient(rgba(255,255,255,.5),
+        rgba(255,255,255,.5)),
+        url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+    border-bottom:2px solid #666;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.header h1{
+    font-size:52px;
+    color:white;
+    letter-spacing:4px;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 0 8px purple;
+}
+
+/* Нижняя область */
+.main{
+    display:flex;
+    height:calc(100vh - 80px);
+}
+
+/* Левое меню */
+.left{
+    width:25%;
+    padding:30px;
+    border-right:2px solid #666;
+
+    background:
+        linear-gradient(rgba(255,255,255,.15),
+        rgba(255,255,255,.15)),
+        url("https://www.transparenttextures.com/patterns/cloudy-day.png");
+}
+
+.left ul{
+    margin-left:20px;
+    font-size:28px;
+}
+
+.left li{
+    margin:12px 0;
+}
+
+/* Правая часть */
+.right{
+    width:75%;
+    display:flex;
+    flex-direction:column;
+}
+
+/* Верхняя половина */
+.top{
+    height:50%;
+    display:flex;
+    border-bottom:2px solid #666;
+}
+
+/* Бегущая строка 1 */
+.box1{
+    width:35%;
+    border-right:2px solid #666;
+    overflow:hidden;
+
+    background:
+        linear-gradient(rgba(255,255,255,.08),
+        rgba(255,255,255,.08)),
+        url("https://www.transparenttextures.com/patterns/worn-dots.png");
+}
+
+/* Бегущая строка 2 */
+.box2{
+    width:65%;
+    overflow:hidden;
+
+    background:
+        linear-gradient(rgba(0,120,255,.2),
+        rgba(0,120,255,.2)),
+        url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+}
+
+/* Нижний блок */
+.box3{
+    height:50%;
+    overflow:hidden;
+
+    background:
+        linear-gradient(rgba(255,200,255,.25),
+        rgba(255,200,255,.25)),
+        url("https://www.transparenttextures.com/patterns/crissxcross.png");
+}
+
+/* Общий стиль текста */
+.marquee{
+    white-space:nowrap;
+    color:white;
+    font-size:32px;
+    padding-top:25px;
+    text-shadow:1px 1px 3px black;
+}
+
+/* Анимации */
+.move1{
+    display:inline-block;
+    animation:left1 10s linear infinite;
+}
+
+.move2{
+    display:inline-block;
+    animation:right1 6s linear infinite;
+}
+
+.move3{
+    display:inline-block;
+    animation:left2 14s linear infinite;
+}
+
+@keyframes left1{
+    from{transform:translateX(100%);}
+    to{transform:translateX(-100%);}
+}
+
+@keyframes right1{
+    from{transform:translateX(-100%);}
+    to{transform:translateX(100%);}
+}
+
+@keyframes left2{
+    from{transform:translateX(100%);}
+    to{transform:translateX(-100%);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <div class="header">
+        <h1>WELCOME</h1>
+    </div>
+
+    <div class="main">
+
+        <div class="left">
+            <ul>
+                <li>Battlezone</li>
+                <li>Descent 3</li>
+                <li>Quake 3</li>
+                <li>Hexen 2</li>
+                <li>Unreal 2</li>
+            </ul>
+        </div>
+
+        <div class="right">
+
+            <div class="top">
+
+                <div class="box1">
+                    <div class="marquee">
+                        <span class="move1">Бегущая строка 1</span>
+                    </div>
+                </div>
+
+                <div class="box2">
+                    <div class="marquee">
+                        <span class="move2">Бегущая строка 2</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="box3">
+                <div class="marquee">
+                    <span class="move3">Бегущая строка 3</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
